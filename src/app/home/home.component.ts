@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+    constructor(private appService:AppService){
+      this.appService.seeHeaderChanging(true)
+    }
 }

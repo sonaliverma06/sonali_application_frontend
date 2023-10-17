@@ -1,0 +1,153 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: red;
+  display: flex;
+  background-color: black;
+}
+.heading {
+  color: white;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  padding: 20px;
+  width: 30%;
+  cursor: pointer;
+}
+.navheader {
+  display: flex;
+  padding: 30px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.navheader a {
+  align-content: center;
+  justify-content: space-between;
+  margin-left: 30px;
+  color: white;
+  cursor: pointer;
+}
+.navoption {
+  display: flex;
+}
+.headeroption {
+  display: flex;
+  width: 30%;
+  align-content: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+}
+.navbutton {
+  width: 90px;
+
+  height: 30px;
+  background-color: lavenderblush;
+
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+.navbutton:hover {
+  color: #fff;
+}
+
+.navbutton:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  cursor: pointer;
+  background-color: burlywood;
+  transition: all 0.35s;
+}
+.navbutton span {
+  position: relative;
+  z-index: 2;
+  color: black;
+  font-weight: bold;
+}
+
+.navbutton:hover:after {
+  width: 100%;
+}
+
+.headeroption a {
+  text-decoration: none;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+.headeroption a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  transition: width 0.3s;
+}
+.headeroption a:hover::after {
+  width: 100%;
+}
+.navheader a {
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+
+.navheader a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.navheader a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .navheader {
+    display: none;
+  }
+  .navoption_a {
+    display: block;
+  }
+  .headeroption {
+    display: none;
+  }
+  .heading {
+    width: 70%;
+  }
+
+  .navbutton {
+    display: inline-block;
+  }
+}

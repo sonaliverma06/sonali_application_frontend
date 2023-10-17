@@ -1,0 +1,83 @@
+.container-fluid{
+overflow: hidden;
+display: grid;
+}
+.register_container{
+width: 100%;
+height: 100vh;
+background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-gourmet-breakfast-snacks-simple-fresh-food-banner-picture-image_1087836.jpg");
+
+}
+.regisrer_div{
+width: 70%;
+height: 560px;
+margin-top: 60px;
+margin-left: 14%;
+// background-color: chartreuse;
+
+}
+.register_info{
+width: 100%;
+height: 500px;
+flex-wrap: nowrap;
+display: flex;
+margin-top: -18px;
+background-color: black;
+border-radius: 2%;
+box-shadow: 9px 20px 20px black;
+
+}
+
+
+.regisrer_div h1{
+text-align: center;
+    justify-items: center;
+   
+}
+.register_heading{
+    width: 100%;
+    height: 60px;
+  
+  
+}
+.register_form {
+    width: 100%;
+    background-image: url("https://www.textures4photoshop.com/tex/thumbs/fast-food-restaurant-background-with-chalkboard-texture-free-94.jpg");
+    // background-color: silver;
+    height: 500px;
+   display: flex;
+   background-size: cover;
+   background-position: center;
+border-radius: 2%;
+  
+}
+.register_label{
+    color: white;
+    font-size: 20px;
+    margin-left: 240px;
+    margin-top: 40px;
+    font-weight: bold;
+   
+}
+.input_form{
+    margin-left: 30px;
+    margin-top: 15px;
+    height: 29px;
+  width: 320px;
+    background-color: seashell;
+       
+}
+.register_select{
+width: 320px;
+height: 29px;
+margin-top: 15px;
+margin-left: 56px;
+background-color: seashell;
+}
+.submit_button{
+    margin-top: 10px;
+   margin-left: 53%;
+   width: 47%;
+   height: 40px;
+   background-color: seashell;
+}

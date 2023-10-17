@@ -1,0 +1,22 @@
+.food_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.food_container img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    position: relative;
+}
+
+.food_container img:hover {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.food_titel {
+    text-align: center;
+    justify-content: center;
+}
