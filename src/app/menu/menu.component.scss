@@ -1,22 +1,153 @@
-.food_container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+.food_banner {
+  background-image: url("https://scitechdaily.com/images/Unhealthy-Junk-Food-Concept.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  background-position: center;
 }
-
-.food_container img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-    position: relative;
-}
-
-.food_container img:hover {
-    transition: .3s ease-in-out;
-    cursor: pointer;
-}
-
 .food_titel {
-    text-align: center;
-    justify-content: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  height: 130px;
+  background-image: url("https://restfood.onlywebcoding.com.ua/images/bg-pattern.jpg");
+}
+
+.food_cart {
+  height: 350px;
+  width: 230px;
+  border: 2px solid rgba(255, 123, 0, 0.767);
+  border-radius: 5%;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.food_image {
+  height: 200px;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.food_image img {
+  object-fit: cover;
+  position: relative;
+  height: 100%;
+  display: block;
+  width: 100%;
+}
+.food_image img:hover {
+  transform: rotate(15deg) scale(1.4);
+  transition: 0.3s ease-in-out;
+}
+.food_tag {
+  background-color: rgba(255, 123, 0, 0.767);
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  height: 43%;
+}
+.food_tag h2,
+h3 {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+.food_container {
+  display: grid;
+  grid-template-columns: repeat(4, 0.2fr);
+
+  background-image: url("https://restfood.onlywebcoding.com.ua/images/bg-pattern.jpg");
+}
+.wrapper.flex-row.wrapp-menu .list-menu li a {
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+  color: #000;
+  padding: 8px 16px;
+}
+ol,
+ul {
+  list-style: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.wrapper.flex-row.wrapp-menu .list-menu li a {
+  background-color: rgba(255, 123, 0, 0.89);
+  color: white;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+}
+
+.wrapper.flex-row.wrapp-menu .list-menu li a:hover {
+  background-color: #b8b8b8;
+}
+
+.wrapper.flex-row.wrapp-menu {
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.wrapper.flex-row.wrapp-menu .list-menu li {
+  float: left;
+  margin: 10px;
+}
+.food_button {
+  height: 30px;
+  width: 100px;
+  margin-left: 60px;
+  margin-top: 30px;
+  font-weight: 900;
+  background-color: bisque;
+  cursor: pointer;
+}
+.food_button:hover {
+  background-color: burlywood;
+}
+.pagination {
+  height: 100px;
+  width: 100%;
+  background-image: url("https://restfood.onlywebcoding.com.ua/images/bg-pattern.jpg");
+  display: flex;
+}
+.food_pagination_container {
+  height: 50px;
+  width: 30%;
+  margin-left: 79%;
+  margin-top: 40px;
+}
+.food_pagination_button {
+  height: 35px;
+  width: 25%;
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
+  background-color: darkgray;
+  cursor: pointer;
+
+  margin: 10px;
+}
+.food_pagination_span {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.food_pagination_button:hover {
+  background-color: cadetblue;
 }

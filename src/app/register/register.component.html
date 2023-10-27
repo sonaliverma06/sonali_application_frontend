@@ -1,81 +1,263 @@
-
 <div class="container-fluid">
   <div class="register_container">
     <div class="regisrer_div">
-          <div class="register_heading"><h1>SignUp</h1></div><br>
-            <div class="register_info">
-     
-      <div class="register_form">
-      
-        <form>
+      <div class="register_heading"><h1>SignUp</h1></div>
+      <br />
+      <div class="register_info">
+        <div class="register_form">
+          <form [formGroup]="registerForm" (ngSubmit)="registersubmit()">
             <div>
-                <label class="register_label">First Name</label>
-                 <input class="input_form" name="first_name"  style="margin-left: 25px;"/>
+              <label class="register_label">Name</label>
+              <input
+                type="text"
+                formControlName="name"
+                class="input_form"
+                name="name"
+                style="margin-left: 70px"
+              />
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'Name is required',
+                  control: registerForm.controls['name']
+                }"
+              ></ng-container>
             </div>
-         
-          <div>
-               <label class="register_label">Last Name</label>
-             <input class="input_form" name="last_name" />
-          </div>
-         
-          <div>
+            
+            <div>
               <label class="register_label">Email</label>
-               <input class="input_form" name="email" style="margin-left: 70px;"/>
-          </div>
-       
-          <div>
-            <label class="register_label">State</label>
-              <select class="register_select" name="state" style="margin-left: 79px;">
-            <option>hello</option>
-              <option>hello</option>
-              <option>hello</option>
-          </select>
-          </div>
-        
-          <div>
-            <label class="register_label"> City</label>
-               <select class="register_select" name="city" style="margin-left: 85px;">
-              <option>hello</option>
-                <option>hello</option>
-                  <option>hello</option>
-          </select>
-          </div>
-       
-          <div>
-            <label class="register_label" >Contact </label>
-              <input class="input_form" name="contact_number" style="margin-left: 50px;"/>
-          </div>
-        
-          <div>
-            <label class="register_label">Zip code</label>
-               <input class="input_form" name="zip_code" style="margin-left: 47px;"/>
-          </div>
-       
-          <div>
-            <label class="register_label">Gender</label>
-            <select class="register_select" name="gender">
-             <option>Male</option>
-               <option>Female</option>
-          </select>
-          </div>
-          
-          <div>
+              <input
+                type="email"
+                formControlName="email"
+                class="input_form"
+                name="email"
+                style="margin-left: 70px"
+              />
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'Email is required',
+                  control: registerForm.controls['email']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'email',
+                  message: 'Email is invalid',
+                  control: registerForm.controls['email']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'minLength',
+                  message: 'Email should have at least 3 symbols',
+                  control: registerForm.controls['email']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'maxLength',
+                  message: 'Email should have maximum 360 symbols',
+                  control: registerForm.controls['email']
+                }"
+              ></ng-container>
+            </div>
+            <div>
+              <label class="register_label">State</label>
+              <select
+                formControlName="state"
+                class="register_select"
+                name="state"
+                style="margin-left: 79px"
+                >
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Goa">Goa</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Assam">Assam</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Haryana">Haryana</option>
+              </select>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'state is required',
+                  control: registerForm.controls['state']
+                }"
+              ></ng-container>
+            </div>
+            <div>
+              <label class="register_label"> City</label>
+              <input
+                type="city"
+                formControlName="city"
+                class="input_form"
+                name="city"
+                style="margin-left: 85px"
+              />
+
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'city is required',
+                  control: registerForm.controls['city']
+                }"
+              ></ng-container>
+            </div>
+            <div>
+              <label class="register_label">Contact </label>
+              <input
+                type="text"
+                formControlName="contact"
+                class="input_form"
+                name="contact_number"
+                style="margin-left: 50px"
+              />
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'contact is required',
+                  control: registerForm.controls['contact']
+                }"
+              ></ng-container>
+            </div>
+           
+            <div>
+              <label class="register_label">Gender</label>
+              <select
+                class="register_select"
+                name="gender"
+                formControlName="gender"
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'gender is required',
+                  control: registerForm.controls['gender']
+                }"
+              ></ng-container>
+            </div>
+            <div>
               <label class="register_label">Address</label>
-              <input class="input_form" name="address" style="margin-left: 50px;"/>
-          </div>
-        
-          <div>
-            <label class="register_label">Password</label>
-              <input class="input_form" name="password" style="margin-left: 38px;"/>
-          </div>
-        
-          <div>
-            <button type="button" class="submit_button">submit</button>
-          </div>
+              <input
+                formControlName="address"
+                class="input_form"
+                name="address"
+                style="margin-left: 50px"
+                type="text"
+              />
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'address is required',
+                  control: registerForm.controls['address']
+                }"
+              ></ng-container>
+            </div>
+            <div>
+              <label class="register_label">Password</label>
+              <input
+                formControlName="password"
+                class="input_form"
+                name="password"
+                style="margin-left: 38px"
+                type="password"
+              />
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'required',
+                  message: 'Password is required',
+                  control: registerForm.controls['password']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'minlength',
+                  message: 'Password should have at least 3 symbols',
+                  control: registerForm.controls['password']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'maxLength',
+                  message: 'Password should have maximum 100 symbols',
+                  control: registerForm.controls['password']
+                }"
+              ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'pattern',
+                  message:
+                    'Password should contain atleast uppercase, lowercase, special character,number and limit 8-20 must be required.',
+                  control: registerForm.controls['password']
+                }"
+              ></ng-container>
+            </div>
+            <div>
+              <button class="submit_button">submit</button><br>
+            </div>
+         <div class="register_span"><a [routerLink]="'/'">Already have an account login here</a></div>
           
-        </form>
-      </div>
+            
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template
+  #formError
+  let-control="control"
+  let-message="message"
+  let-validation="validation"
+>
+  <ng-container
+    *ngIf="control.hasError(validation) && (control.dirty || control.touched)"
+  >
+    <div class="fv-plugins-message-container">
+      <span role="alert" style="color: white">
+        {{ message }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>

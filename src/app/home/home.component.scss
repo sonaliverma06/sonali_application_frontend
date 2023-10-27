@@ -14,7 +14,7 @@ overflow: hidden;
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: red;
+  // background-color: red;
   position: relative;
   transition: transform 0.3s;
   object-fit: cover;
@@ -94,6 +94,7 @@ overflow: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  
 }
 
 .food_container img {
@@ -110,6 +111,184 @@ overflow: hidden;
   text-align: center;
   justify-content: center;
  }
+
+
+#booking-table {
+    background-repeat: repeat;
+}
+
+ 
+ #booking-table {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+section {
+    display: block;
+      background-image: url('https://restfood.onlywebcoding.com.ua/images/bg-pattern.jpg');
+
+}
+
+
+.title-center {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+#booking-table .title-center h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 80px;
+        color: #fff;
+        padding-top: 50px;
+}
+
+
+.wrapper.flex-row.wrapp-booking-form {
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+.booking-form {
+    width: 60%;
+    padding-right: 50px;
+}
+.booking-form, .working-hours {
+   box-sizing: border-box;
+}
+
+
+ form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    // vertical-align: baseline;
+        display: block;
+    margin-top: 0em;
+}
+
+.wrapp-input-group.flex-row {
+    justify-content: space-between;
+}
+.wrapp-input-group.flex-row>div {
+    width: 48%;
+    margin-bottom: 20px;
+}
+p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.wrapp-input-group.flex-row>div label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    margin-bottom: 10px;
+    display: block;
+     font-family: 'Poppins', sans-serif;
+         color: #ffcc33ff;
+}
+
+.wrapp-input-group.flex-row>div input {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 3px;
+        background-color: #000;
+            color: #fff;
+}
+.wrapp-input-group.flex-row>div input:focus{
+    border-color: #ffcc33;
+}
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.btn{
+    background-color: #ffcc33;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 18px;
+    letter-spacing: 3px;
+    height: 60px;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 45%;
+}
+.btn:hover{
+    background-color: #b8b8b8;
+}
+.result {
+    display: none;
+    margin-top: 20px;
+}
+.working-hours {
+    width: 40%;
+    padding: 30px;
+    background-color: #000;
+}
+.working-hours h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+       color: #fff;
+}
+ .working-hours p{
+    color: #b8b8b8;
+
+ }
+.flex-row.table-hours p{
+    color: #fff;
+}
+ .flex-row.table-hours {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 40px 0px;
+    border-bottom: 1px solid #b8b8b8;
+}
 
 @media screen and (max-width: 767px) {
   .nav_banner {

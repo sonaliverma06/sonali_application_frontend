@@ -1,44 +1,49 @@
-
-  <div class="food">
-    <div class="food_titel"><h1>Food Items</h1></div>
-    <div class="food_container">
-      <img
-        src="https://149357198.v2.pressablecdn.com/wp-content/uploads/elementor/thumbs/bigstock-mexican-street-tacos-with-barb-145963172-oavgzhosufyslwewrk2cmt7pz1kpmpu46sm6gixvi0.jpg"
-      />
-      <img
-        src="https://assets-global.website-files.com/620e4101b2ce12a1a6bff0e8/645c6fe1bc20a1928aedb64d_roast-goose-gcc1b4fd11_640%20(1).jpg"
-      />
-      <img
-        src="https://assets.gqindia.com/photos/6213cbed18140d747a9b0a6e/16:9/w_1920,h_1080,c_limit/new%20restaurant%20menus%20in%20Mumbai.jpg"
-      />
-      <img
-        src="https://assets.gqindia.com/photos/6213cbed18140d747a9b0a6e/16:9/w_1920,h_1080,c_limit/new%20restaurant%20menus%20in%20Mumbai.jpg"
-      />
-      <img
-        src="https://149357198.v2.pressablecdn.com/wp-content/uploads/elementor/thumbs/bigstock-mexican-street-tacos-with-barb-145963172-oavgzhosufyslwewrk2cmt7pz1kpmpu46sm6gixvi0.jpg"
-      />
-
-      <img
-        src="https://assets-global.website-files.com/620e4101b2ce12a1a6bff0e8/645c6fe1bc20a1928aedb64d_roast-goose-gcc1b4fd11_640%20(1).jpg"
-      />
-
-      <img
-        src="https://assets-global.website-files.com/620e4101b2ce12a1a6bff0e8/645c6fe1bc20a1928aedb64d_roast-goose-gcc1b4fd11_640%20(1).jpg"
-      />
-      <img
-        src="https://assets.gqindia.com/photos/6213cbed18140d747a9b0a6e/16:9/w_1920,h_1080,c_limit/new%20restaurant%20menus%20in%20Mumbai.jpg"
-      />
-      <img
-        src="https://149357198.v2.pressablecdn.com/wp-content/uploads/elementor/thumbs/bigstock-mexican-street-tacos-with-barb-145963172-oavgzhosufyslwewrk2cmt7pz1kpmpu46sm6gixvi0.jpg"
-      />
-      <img
-        src="https://149357198.v2.pressablecdn.com/wp-content/uploads/elementor/thumbs/bigstock-mexican-street-tacos-with-barb-145963172-oavgzhosufyslwewrk2cmt7pz1kpmpu46sm6gixvi0.jpg"
-      />
-      <img
-        src="https://assets-global.website-files.com/620e4101b2ce12a1a6bff0e8/645c6fe1bc20a1928aedb64d_roast-goose-gcc1b4fd11_640%20(1).jpg"
-      />
-      <img
-        src="https://assets.gqindia.com/photos/6213cbed18140d747a9b0a6e/16:9/w_1920,h_1080,c_limit/new%20restaurant%20menus%20in%20Mumbai.jpg"
-      />
+<div class="container-fluid">
+  <div class="food_banner"></div>
+  <div class="food_titel">
+    <h1 class="food_titel_h1" style="padding-top: 20px">Our Menu</h1>
+    <div class="wrapper flex-row wrapp-menu">
+      <ul class="list-menu">
+        <li><a class="">All</a></li>
+        <li><a class="">Burgers</a></li>
+        <li><a class="">Pizza</a></li>
+        <li><a class="">Sneaks</a></li>
+        <li><a class="">Pasta</a></li>
+        <li><a class="">Salads</a></li>
+        <li><a class="">Dessert</a></li>
+        <li><a class="">Drinks</a></li>
+      </ul>
     </div>
   </div>
+  <div class="food_container">
+    <div class="food_cart" *ngFor="let item of paginatedData">
+      <div class="food_image">
+        <img [src]="item.image" />
+      </div>
+      <div class="food_tag">
+        <h2>{{ item.name }}</h2>
+        <h3>₹{{ item.price }}</h3>
+        <button class="food_button">Order Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <div class="food_pagination_container">
+      <button
+        class="food_pagination_button"
+        (click)="previousPage()"
+        [disabled]="currentPage === 1"
+      >
+        Previous
+      </button>
+      <button
+        class="food_pagination_button"
+        (click)="nextPage()"
+        [disabled]="currentPage * itemsPerPage >= arrayData.length"
+      >
+        Next
+      </button>
+      <span class="food_pagination_span">Page {{ currentPage }}</span>
+    </div>
+  </div>
+</div>

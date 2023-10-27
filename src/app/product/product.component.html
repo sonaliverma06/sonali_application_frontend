@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="product_container">
+    <div class="product_info">
+      <form [formGroup]="productForm" (ngSubmit)="productsubmit()">
+        <div>
+          <label class="product_label">Name</label>
+          <input
+            type="text"
+            class="product_input"
+            name="name"
+            formControlName="name"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'Name is required',
+              control: productForm.controls['name']
+            }"
+          ></ng-container>
+        </div>
+        <div>
+          <label class="product_label">Price</label>
+          <input
+            type="text"
+            class="product_input"
+            name="price"
+            formControlName="price"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'Price is required',
+              control: productForm.controls['Price']
+            }"
+          ></ng-container>
+        </div>
+        <div>
+          <label class="product_label">category</label>
+          <input
+            type="text"
+            class="product_input"
+            name="category"
+            formControlName="category"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'category is required',
+              control: productForm.controls['category']
+            }"
+          ></ng-container>
+        </div>
+        <div>
+          <label class="product_label">quantity</label>
+          <input
+            type="text"
+            class="product_input"
+            name="quantity"
+            formControlName="quantity"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'quantity is required',
+              control: productForm.controls['quantity']
+            }"
+          ></ng-container>
+        </div>
+        <div>
+          <label class="product_label">image</label>
+          <input
+            type="file"
+            class="product_input"
+            name="image"
+            formControlName="image"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'image is required',
+              control: productForm.controls['image']
+            }"
+          ></ng-container>
+        </div>
+        <div>
+            <button>submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<ng-template
+  #formError
+  let-control="control"
+  let-message="message"
+  let-validation="validation"
+>
+  <ng-container
+    *ngIf="control.hasError(validation) && (control.dirty || control.touched)"
+  >
+    <div class="fv-plugins-message-container">
+      <span role="alert" style="color: white">
+        {{ message }}
+      </span>
+    </div>
+  </ng-container>
+</ng-template>
