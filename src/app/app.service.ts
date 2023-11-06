@@ -41,7 +41,7 @@ export class AppService {
   }
   public postproduct(data:any): Observable<any> {
     return this.http
-      .get('http://localhost:3000/product',data)
+      .post('http://localhost:3000/product',data)
       .pipe(catchError(this.HandleError));
   }
 }

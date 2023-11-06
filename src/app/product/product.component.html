@@ -1,10 +1,12 @@
 <div class="container-fluid">
   <div class="product_container">
     <div class="product_info">
-      <form [formGroup]="productForm" (ngSubmit)="productsubmit()">
+      <div class="heading">Product</div>
+      <form [formGroup]="productForm" (ngSubmit)="productsubmit()" class="add_form" >
         <div>
           <label class="product_label">Name</label>
           <input
+          style="margin-left: 55px;"
             type="text"
             class="product_input"
             name="name"
@@ -22,6 +24,7 @@
         <div>
           <label class="product_label">Price</label>
           <input
+           style="margin-left: 60px;"
             type="text"
             class="product_input"
             name="price"
@@ -32,47 +35,14 @@
             [ngTemplateOutletContext]="{
               validation: 'required',
               message: 'Price is required',
-              control: productForm.controls['Price']
+              control: productForm.controls['price']
             }"
           ></ng-container>
         </div>
-        <div>
-          <label class="product_label">category</label>
-          <input
-            type="text"
-            class="product_input"
-            name="category"
-            formControlName="category"
-          />
-          <ng-container
-            [ngTemplateOutlet]="formError"
-            [ngTemplateOutletContext]="{
-              validation: 'required',
-              message: 'category is required',
-              control: productForm.controls['category']
-            }"
-          ></ng-container>
-        </div>
-        <div>
-          <label class="product_label">quantity</label>
-          <input
-            type="text"
-            class="product_input"
-            name="quantity"
-            formControlName="quantity"
-          />
-          <ng-container
-            [ngTemplateOutlet]="formError"
-            [ngTemplateOutletContext]="{
-              validation: 'required',
-              message: 'quantity is required',
-              control: productForm.controls['quantity']
-            }"
-          ></ng-container>
-        </div>
-        <div>
+      <div>
           <label class="product_label">image</label>
           <input
+           style="margin-left: 55px; "
             type="file"
             class="product_input"
             name="image"
@@ -82,13 +52,13 @@
             [ngTemplateOutlet]="formError"
             [ngTemplateOutletContext]="{
               validation: 'required',
-              message: 'image is required',
+              message: 'Image is required',
               control: productForm.controls['image']
             }"
           ></ng-container>
         </div>
         <div>
-            <button>submit</button>
+            <button class="submit_button">submit</button>
         </div>
       </form>
     </div>
@@ -104,7 +74,7 @@
     *ngIf="control.hasError(validation) && (control.dirty || control.touched)"
   >
     <div class="fv-plugins-message-container">
-      <span role="alert" style="color: white">
+      <span role="alert" style="color: white; margin-left: 155px;">
         {{ message }}
       </span>
     </div>

@@ -21,8 +21,7 @@ initForm(){
      name: ['', Validators.compose([Validators.required])],
      image: ['', Validators.compose([Validators.required])],
      price: ['', Validators.compose([Validators.required])],
-     quantity: ['', Validators.compose([Validators.required])],
-    category: ['', Validators.compose([Validators.required])],
+    
    });
 
 }
@@ -33,10 +32,10 @@ productsubmit(){
   const productdata = {
     name: this.f['name'].value,
     image: this.f['image'].value,
-    category: this.f['cagegory'].value,
-    quantity: this.f['quantity'].value,
     price: this.f['price'].value,
   };
+  console.log('productdata', productdata);
+  
   this.appservice.postproduct(productdata).subscribe({
     next:(res)=>{
       console.log("res",res);
