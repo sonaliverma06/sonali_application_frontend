@@ -9,8 +9,10 @@ import { AppService } from '../app.service';
 })
 export class MenuComponent {
   arrayData: any[] = [];
-  currentPage: number = 1; // Current page
-  itemsPerPage: number = 8; // Number of items per page
+  categoryData: any[] = [];
+  mixCategories: any[] = [];
+  currentPage: number = 1; 
+  itemsPerPage: number = 8; 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -21,12 +23,27 @@ export class MenuComponent {
 
   ngOnInit() {
     this.getproductdata();
+    this.getcategoriesdata();
+  }
+  getcategoriesdata() {
+    this.appservice.getcategories().subscribe({
+      next: (res) => {
+        console.log('reshhujjjjjj', res);
+        this.categoryData = res;
+        // console.log('this.arrayData', this.categoryData);
+      },
+      error: (err) => {
+        console.log('err', err);
+      },
+    });
   }
   getproductdata() {
     this.appservice.getproduct().subscribe({
       next: (res) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.arrayData = res;
+        
+        
       },
       error: (err) => {
         console.log('err', err);

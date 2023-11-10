@@ -2,20 +2,13 @@
   <div class="food_banner"></div>
   <div class="food_titel">
     <h1 class="food_titel_h1" style="padding-top: 20px">Our Menu</h1>
-    <div class="wrapper flex-row wrapp-menu">
-      <ul class="list-menu">
-        <li><a class="">All</a></li>
-        <li><a class="">Burgers</a></li>
-        <li><a class="">Pizza</a></li>
-        <li><a class="">Sneaks</a></li>
-        <li><a class="">Pasta</a></li>
-        <li><a class="">Salads</a></li>
-        <li><a class="">Dessert</a></li>
-        <li><a class="">Drinks</a></li>
-      </ul>
+    <div class="wrapper flex-row wrapp-menu" >
+      <ul class="list-menu" *ngFor="let item of categoryData">
+        <li><a class="">{{item.name}}</a></li>
+        </ul>
     </div>
   </div>
-  <div class="food_container">
+  <div class="food_container"> 
     <div class="food_cart" *ngFor="let item of paginatedData">
       <div class="food_image">
         <img [src]="item.image" />

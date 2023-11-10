@@ -76,15 +76,15 @@
               control: loginForm.controls['password']
             }"
           ></ng-container>
-          <ng-container
-            [ngTemplateOutlet]="formError"
-            [ngTemplateOutletContext]="{
-              validation: 'pattern',
-              message:
-                'Password should contain atleast uppercase, lowercase, special character,number and limit 8-20 must be required.',
-              control: loginForm.controls['password']
-            }"
-          ></ng-container>
+              <ng-container
+                [ngTemplateOutlet]="formError"
+                [ngTemplateOutletContext]="{
+                  validation: 'pattern',
+                  message:
+                    'Password should contain atleast uppercase, lowercase, special character,number and limit 8-20 must be required.',
+                  control: loginForm.controls['password']
+                }"
+              ></ng-container>
         </div>
         <div>
           <button class="login_button">submit</button>

@@ -63,18 +63,13 @@ export class LoginComponent {
          } else {
            this.router.navigate(['/home']);
          }
-        
-      },
+       },
      error:(err)=>{
       console.log("err",err);
-      
-     }
-      
+      }
     })
-
   }
-      
-    }
+}
 
   
 

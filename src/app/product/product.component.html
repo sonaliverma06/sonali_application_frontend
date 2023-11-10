@@ -2,11 +2,15 @@
   <div class="product_container">
     <div class="product_info">
       <div class="heading">Product</div>
-      <form [formGroup]="productForm" (ngSubmit)="productsubmit()" class="add_form" >
+      <form
+        [formGroup]="productForm"
+        (ngSubmit)="productsubmit()"
+        class="add_form"
+      >
         <div>
           <label class="product_label">Name</label>
           <input
-          style="margin-left: 55px;"
+            style="margin-left: 55px"
             type="text"
             class="product_input"
             name="name"
@@ -14,6 +18,7 @@
           />
           <ng-container
             [ngTemplateOutlet]="formError"
+            
             [ngTemplateOutletContext]="{
               validation: 'required',
               message: 'Name is required',
@@ -21,16 +26,34 @@
             }"
           ></ng-container>
         </div>
+          <div>
+          <label class="product_label">Email</label>
+          <input
+            style="margin-left: 55px"
+            type="email"
+            class="product_input"
+            name="email"
+            formControlName="email"
+          />
+          <ng-container
+            [ngTemplateOutlet]="formError"
+            [ngTemplateOutletContext]="{
+              validation: 'required',
+              message: 'email is required',
+              control: productForm.controls['email']
+            }"
+          ></ng-container>
+        </div>
         <div>
           <label class="product_label">Price</label>
           <input
-           style="margin-left: 60px;"
+            style="margin-left: 60px"
             type="text"
             class="product_input"
             name="price"
             formControlName="price"
           />
-          <ng-container
+          <ng-container 
             [ngTemplateOutlet]="formError"
             [ngTemplateOutletContext]="{
               validation: 'required',
@@ -39,11 +62,11 @@
             }"
           ></ng-container>
         </div>
-      <div>
-          <label class="product_label">image</label>
+        <div>
+          <label class="product_label">Image URL</label>
           <input
-           style="margin-left: 55px; "
-            type="file"
+            style="margin-left: 5px"
+            type="text"
             class="product_input"
             name="image"
             formControlName="image"
@@ -58,7 +81,7 @@
           ></ng-container>
         </div>
         <div>
-            <button class="submit_button">submit</button>
+          <button class="submit_button">submit</button>
         </div>
       </form>
     </div>
@@ -74,7 +97,7 @@
     *ngIf="control.hasError(validation) && (control.dirty || control.touched)"
   >
     <div class="fv-plugins-message-container">
-      <span role="alert" style="color: white; margin-left: 155px;">
+      <span role="alert" style="color: white; margin-left: 155px">
         {{ message }}
       </span>
     </div>
