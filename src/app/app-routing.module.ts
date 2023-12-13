@@ -5,12 +5,14 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'productdetail', component: ProductDetailsComponent },
 
   { path: '', component: LoginComponent },
 ];

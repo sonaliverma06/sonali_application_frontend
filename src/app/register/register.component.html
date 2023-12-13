@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="register_container">
     <div class="regisrer_div">
-      <div class="register_heading"><h1>SignUp</h1></div>
-      <br />
+     <div class="register_heading"><h1>SignUp</h1></div>
+      <br/>
       <div class="register_info">
         <div class="register_form">
           <form [formGroup]="registerForm" (ngSubmit)="registersubmit()">
             <div>
-              <label class="register_label">Name</label>
+             <label class="register_label">Name</label>
               <input
                 type="text"
                 formControlName="name"
@@ -18,9 +18,9 @@
               <ng-container
                 [ngTemplateOutlet]="formError"
                 [ngTemplateOutletContext]="{
-                  validation: 'required',
-                  message: 'Name is required',
-                  control: registerForm.controls['name']
+                validation: 'required',
+                message: 'Name is required',
+                control: registerForm.controls['name']
                 }"
               ></ng-container>
             </div>
@@ -61,7 +61,7 @@
               <ng-container
                 [ngTemplateOutlet]="formError"
                 [ngTemplateOutletContext]="{
-                  validation: 'maxLength',
+                  validation: 'maxLengt h',
                   message: 'Email should have maximum 360 symbols',
                   control: registerForm.controls['email']
                 }"

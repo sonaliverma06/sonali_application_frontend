@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminComponent } from './admin/admin.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     ProductComponent,
     AdminComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

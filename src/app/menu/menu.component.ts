@@ -11,8 +11,8 @@ export class MenuComponent {
   arrayData: any[] = [];
   categoryData: any[] = [];
   mixCategories: any[] = [];
-  currentPage: number = 1; 
-  itemsPerPage: number = 8; 
+  currentPage: number = 1;
+  itemsPerPage: number = 8;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -28,7 +28,6 @@ export class MenuComponent {
   getcategoriesdata() {
     this.appservice.getcategories().subscribe({
       next: (res) => {
-        console.log('reshhujjjjjj', res);
         this.categoryData = res;
         // console.log('this.arrayData', this.categoryData);
       },
@@ -42,8 +41,6 @@ export class MenuComponent {
       next: (res) => {
         // console.log('res', res);
         this.arrayData = res;
-        
-        
       },
       error: (err) => {
         console.log('err', err);
